@@ -44,7 +44,7 @@ ML 기반 관상 분석 팀 프로젝트에 앞서, FastAPI 학습과 Docker 실
 
 ### Docker 종료된 모든 컨테이너 삭제
 
-docker rm $(docker ps -a -q)
+> docker rm $(docker ps -a -q)
 
 ### Docker 시스템 사용량 체크
 
