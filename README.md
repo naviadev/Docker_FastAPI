@@ -12,16 +12,40 @@ ML 기반 관상 분석 팀 프로젝트에 앞서, FastAPI 학습과 Docker 실
 
 > uvicorn app.main:app --reload //서버 실행
 
+> deactivate // 가상환경 종료
+
 ## Docker
 
-> docker run -d --name server -p 8000:8000 server //서버 실행 - Docker
+- Docker 이름은 server로 지정해두었다.
 
-> docker ps // 실행중인 docker 컨테이너 확인
+### Docker 컨테이너 실행
 
-> docker stop server // 서버 닫기.
+> docker run -d --name server -p 8000:8000 server
 
-> docker images // Docker 이미지 확인
+### 실행중인 Docker Container 확인
 
-> docker rmi server // Docker 이미지 삭제
+> docker ps
 
-> docker system df // Docker 시스템 사용량 체크
+### Docker 종료
+
+> docker stop server
+
+### Docker 이미지 목록 확인
+
+> docker images
+
+### Docker 이미지 삭제 (지정)
+
+> docker rmi server
+
+### Docker 모든 이미지 삭제
+
+> docker rmi $(docker images -q)
+
+### Docker 종료된 모든 컨테이너 삭제
+
+docker rm $(docker ps -a -q)
+
+### Docker 시스템 사용량 체크
+
+> docker system df
